@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Paragon</h1>
+
+<table id="receiptTable">
+    <!-- Tabela będzie tutaj generowana dynamicznie -->
+</table>
+
+<button onclick="openAddDialog()">Dodaj pozycję</button>
+
+<!-- Dialog do dodawania nowych pozycji -->
+<div id="addDialog" style="display: none;">
+    <label>Nazwa: <input type="text" id="itemName"></label><br>
+    <label>Cena jednostkowa: <input type="number" id="itemPrice" min="0"></label><br>
+    <label>Ilość: <input type="number" id="itemQuantity" min="1"></label><br>
+    <button onclick="addItem()">Dodaj</button>
+    <button onclick="closeAddDialog()">Anuluj</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
