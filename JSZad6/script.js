@@ -2,13 +2,10 @@
 let receiptData;
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Inicjalizacja danych w Local Storage
     receiptData = JSON.parse(localStorage.getItem('receiptData')) || [];
 
-    // 2. Generowanie widoku paragonu
     generateReceiptView();
 
-    // 3. Dodawanie nowych pozycji
     window.openAddDialog = function () {
         document.getElementById('addDialog').style.display = 'block';
     };
@@ -44,11 +41,9 @@ function generateReceiptView() {
     const receiptTable = document.getElementById('receiptTable');
     receiptTable.innerHTML = '';
 
-    // Dodawanie nagłówków
     const headerRow = receiptTable.insertRow();
     headerRow.innerHTML = '<th>Nazwa</th><th>Cena jednostkowa</th><th>Ilość</th><th>Wartość</th><th>Akcje</th>';
 
-    // Dodawanie pozycji paragonu
     let totalAmount = 0;
     receiptData.forEach((item, index) => {
         const row = receiptTable.insertRow();
@@ -58,7 +53,6 @@ function generateReceiptView() {
         const cellAmount = row.insertCell(3);
         const cellActions = row.insertCell(4);
 
-        // Inputy do edycji
         const inputName = document.createElement('input');
         inputName.type = 'text';
         inputName.value = item.name;
